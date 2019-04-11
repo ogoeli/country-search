@@ -4,7 +4,7 @@ const SearchDropdown = () => {
   return (
     <div className='search__dropdown'>
       <button className='search__dropdown__btn'>
-        Filter by Region <i class='fas fa-angle-down' />
+        Filter by Region <i className='fas fa-angle-down' />
       </button>
 
       <ul className='search__dropdown__list'>

@@ -6,7 +6,7 @@ import SearchDropdown from './SearchDropdown';
 const Search = () => {
   return (
     <div className='search'>
-      <i class='fas fa-search search__icon' />
+      <i className='fas fa-search search__icon' />
       <SearchInput />
       <SearchDropdown />
     </div>
