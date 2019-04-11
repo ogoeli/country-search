@@ -1,0 +1,31 @@
+.details {
+  margin-top: 8rem;
+
+  &__btn {
+    width: 13.6rem;
+    height: 4rem;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 0.7rem 0 rgba($color: #000000, $alpha: 0.29);
+  }
+
+  &__country {
+    display: flex;
+    margin-top: 8rem;
+    justify-content: space-between;
+    align-items: center;
+
+    &__img {
+      width: 56rem;
+      height: 40rem;
+    }
+
+    &__info {
+      &__lists {
+        margin-top: 2.4rem;
+        display: flex;
+      }
+    }
+  }
+}

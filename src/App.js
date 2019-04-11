@@ -1,31 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './styles/main.scss';
 import Header from './components/Header';
-import Search from './components/Search';
-import Results from './components/Results';
+import Home from './components/Home';
+import Details from './components/Details';
 
 const App = () => {
-  const [countries, setCountries] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('');
-
-  useEffect(() => {
-    getCountries();
-  }, []);
-
-  const getCountries = async () => {
-    const results = await axios.get('https://restcountries.eu/rest/v2/all');
-    const { data } = results;
-
-    return setCountries(data);
-  };
-
   return (
     <>
       <Header />
       <div className='container'>
-        <Search searchTerm={searchTerm} />
-        <Results countries={countries} />
+        <Router>
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/:cid' component={Details} />
+          </Switch>
+        </Router>
       </div>
     </>
   );
