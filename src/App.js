@@ -7,6 +7,7 @@ import Results from './components/Results';
 
 const App = () => {
   const [countries, setCountries] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     getCountries();
@@ -23,7 +24,7 @@ const App = () => {
     <>
       <Header />
       <div className='container'>
-        <Search />
+        <Search searchTerm={searchTerm} />
         <Results countries={countries} />
       </div>
     </>

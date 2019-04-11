@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 
-const SearchInput = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-
+const SearchInput = props => {
+  console.log(props);
   return (
     <input
+      testchild={'asfdasdf'}
       type='text'
       placeholder='Search for a country...'
       className='search__input'
-      onChange={e => setSearchTerm(e.target.value)}
+      // onChange={e => }
+      onChange={e => props.action(e.target.value)}
+      // onKeyDown={e => (e.key === 'Enter' ? console.log(searchTerm) : null)}
     />
   );
 };
