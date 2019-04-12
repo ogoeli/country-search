@@ -8,15 +8,15 @@ import Details from './components/Details';
 const App = () => {
   return (
     <>
-      <Header />
-      <div className='container'>
-        <Router>
+      <Router>
+        <Header />
+        <div className='container'>
           <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/:cid' component={Details} />
           </Switch>
-        </Router>
-      </div>
+        </div>
+      </Router>
     </>
   );
 };
