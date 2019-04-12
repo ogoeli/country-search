@@ -71,7 +71,11 @@ const Results = ({ searchTerm, selectedRegion, history }) => {
       }
 
       return filteredResults.map(country => (
-        <div className='results__card' key={country.alpha3Code}>
+        <div
+          className='results__card'
+          key={country.alpha3Code}
+          onClick={() => history.push(`/${country.alpha3Code.toLowerCase()}`)}
+        >
           <img
             src={country.flag}
             alt='Country'
@@ -108,7 +112,11 @@ const Results = ({ searchTerm, selectedRegion, history }) => {
       }
 
       return filteredResults.map(country => (
-        <div className='results__card' key={country.alpha3Code}>
+        <div
+          className='results__card'
+          key={country.alpha3Code}
+          onClick={() => history.push(`/${country.alpha3Code.toLowerCase()}`)}
+        >
           <img
             src={country.flag}
             alt='Country'
@@ -149,7 +157,11 @@ const Results = ({ searchTerm, selectedRegion, history }) => {
       }
 
       return filteredResults.map(country => (
-        <div className='results__card' key={country.alpha3Code}>
+        <div
+          className='results__card'
+          key={country.alpha3Code}
+          onClick={() => history.push(`/${country.alpha3Code.toLowerCase()}`)}
+        >
           <img
             src={country.flag}
             alt='Country'
@@ -174,7 +186,6 @@ const Results = ({ searchTerm, selectedRegion, history }) => {
 
   return (
     <div className='results'>
-      {/* <button onClick={filterCountries}>adsf</button> */}
       {countries ? renderCountries() : <h1>Loading</h1>}
     </div>
   );
