@@ -4,11 +4,7 @@ const SearchInput = props => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const sendSearchTerm = () => {
-    if (searchTerm.trim() === '') {
-      return;
-    }
-
-    return props.action(searchTerm);
+    return props.getSearchQuery(searchTerm);
   };
 
   return (
@@ -17,7 +13,7 @@ const SearchInput = props => {
       placeholder='Search for a country...'
       className='search__input'
       onChange={e => setSearchTerm(e.target.value)}
-      onKeyDown={e => (e.key === 'Enter' ? sendSearchTerm() : null)}
+      onKeyDown={sendSearchTerm}
     />
   );
 };
