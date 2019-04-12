@@ -5,7 +5,6 @@ import './styles.scss';
 
 const Results = ({ searchTerm }) => {
   const [countries, setCountries] = useState(null);
-  const [filteredCountries, setFilteredCountries] = useState([]);
   const [error, setError] = useState(false);
 
   console.log(searchTerm);
@@ -13,28 +12,6 @@ const Results = ({ searchTerm }) => {
   useEffect(() => {
     getCountries();
   }, []);
-
-  useEffect(() => {
-    // filterCountries();
-  }, [searchTerm]);
-
-  // const filterCountries = () => {
-  //   if (searchTerm.trim() === '') {
-  //     return setFilteredCountries(countries);
-  //   }
-
-  //   const filteredResults = countries.filter(country =>
-  //     country.name.toLowerCase().includes(searchTerm.toLowerCase())
-  //   );
-
-  //   console.log(filteredResults);
-
-  //   if (!filteredResults.length) {
-  //     return console.log('nothing bro');
-  //   }
-
-  //   return setCountries(filteredResults);
-  // };
 
   const getCountries = async () => {
     if (localStorage.getItem('countries')) {

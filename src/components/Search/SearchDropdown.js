@@ -7,13 +7,13 @@ const SearchDropdown = () => {
         Filter by Region <i className='fas fa-angle-down' />
       </button>
 
-      <ul className='search__dropdown__list'>
+      {/* <ul className='search__dropdown__list'>
         <li>Africa</li>
         <li>America</li>
         <li>Asia</li>
         <li>Europe</li>
         <li>Oceania</li>
-      </ul>
+      </ul> */}
     </div>
   );
 };

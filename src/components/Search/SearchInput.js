@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const SearchInput = props => {
-  const [searchTerm, setSearchTerm] = useState('');
+const SearchInput = ({ getSearchQuery }) => {
+  const sendSearchTerm = e => {
+    e.preventDefault();
 
-  const sendSearchTerm = () => {
-    return props.getSearchQuery(searchTerm);
+    if (e.target.value.trim() === '') {
+      e.target.value = '';
+      return getSearchQuery('');
+    }
+
+    return getSearchQuery(e.target.value);
   };
 
   return (
@@ -12,8 +17,7 @@ const SearchInput = props => {
       type='text'
       placeholder='Search for a country...'
       className='search__input'
-      onChange={e => setSearchTerm(e.target.value)}
-      onKeyDown={sendSearchTerm}
+      onChange={sendSearchTerm}
     />
   );
 };
