@@ -52,6 +52,10 @@
       width: 20rem;
       position: absolute;
 
+      li {
+        cursor: pointer;
+      }
+
       li:not(:first-child) {
         margin-top: 0.8rem;
       }
