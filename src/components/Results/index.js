@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import commaNumber from 'comma-number';
 import './styles.scss';
 
-const Results = ({ searchTerm, selectedRegion }) => {
+const Results = ({ searchTerm, selectedRegion, history }) => {
   const [countries, setCountries] = useState(null);
   // const [error, setError] = useState(false);
 
@@ -27,7 +28,11 @@ const Results = ({ searchTerm, selectedRegion }) => {
   const renderCountries = () => {
     if (searchTerm === '' && selectedRegion === 'All Regions') {
       return countries.map(country => (
-        <div className='results__card' key={country.alpha3Code}>
+        <div
+          className='results__card'
+          key={country.alpha3Code}
+          onClick={() => history.push(`/${country.alpha3Code.toLowerCase()}`)}
+        >
           <img
             src={country.flag}
             alt='Country'
@@ -175,4 +180,4 @@ const Results = ({ searchTerm, selectedRegion }) => {
   );
 };
 
-export default Results;
+export default withRouter(Results);
