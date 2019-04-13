@@ -4,6 +4,7 @@ import './styles/main.scss';
 import Header from './components/Header';
 import Home from './components/Home';
 import Details from './components/Details';
+import NotFound from './components/NotFound';
 
 const App = () => {
   return (
@@ -13,7 +14,8 @@ const App = () => {
         <div className='container'>
           <Switch>
             <Route path='/' exact component={Home} />
-            <Route path='/:cid' component={Details} />
+            <Route path='/:cid' exact component={Details} />
+            <Route component={NotFound} />
           </Switch>
         </div>
       </Router>
