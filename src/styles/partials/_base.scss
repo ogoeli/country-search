@@ -21,3 +21,63 @@ h2,
 h3 {
   font-weight: 700;
 }
+
+[data-theme='dark'] {
+  body {
+    background: #202c36;
+    color: #fff;
+  }
+
+  .header {
+    background-color: #2b3844;
+
+    &__mode {
+      background: none;
+      color: #fff;
+    }
+  }
+
+  .details {
+    &__btn {
+      background-color: #2b3844;
+      color: #fff;
+    }
+
+    &__country__info__borders {
+      ul li {
+        background-color: #2b3844;
+      }
+    }
+  }
+
+  .results {
+    &__card {
+      background-color: #2b3844;
+    }
+  }
+
+  .search {
+    i {
+      color: #fff;
+    }
+
+    &__input {
+      background-color: #2b3844;
+
+      &::placeholder {
+        color: #fff;
+      }
+    }
+
+    &__dropdown {
+      &__btn {
+        background-color: #2b3844;
+        color: #fff;
+      }
+
+      &__list {
+        background-color: #2b3844;
+      }
+    }
+  }
+}

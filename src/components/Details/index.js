@@ -7,7 +7,6 @@ import './styles.scss';
 const Details = props => {
   const [countryData, setCountryData] = useState(null);
   const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getCountryData();
@@ -50,7 +49,7 @@ const Details = props => {
     }
 
     const borderCountriesList = borderCountries
-      .map(border => <li>{border}</li>)
+      .map(border => <li key={border}>{border}</li>)
       .slice(0, 3);
 
     return (
