@@ -3,6 +3,7 @@ import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import commaNumber from 'comma-number';
 import './styles.scss';
+import { promised } from 'q';
 
 const Details = props => {
   const [countryData, setCountryData] = useState(null);
@@ -42,7 +43,7 @@ const Details = props => {
   };
 
   const displayBorders = () => {
-    const borderCountries = countryData.borders;
+    const borderCountries = countryData.borders.slice(0, 3);
 
     if (!borderCountries.length) {
       return null;
