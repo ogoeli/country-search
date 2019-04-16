@@ -4,10 +4,21 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 7.5rem;
 
+  @media screen and (max-width: 37.5rem) {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 3.2rem;
+    grid-gap: 4rem 0;
+  }
+
   &__card {
     background: #fff;
     border-radius: 0.4rem;
     cursor: pointer;
+
+    @media screen and (max-width: 37.5rem) {
+      margin: 0 auto;
+      width: 26.4rem;
+    }
 
     &__img {
       border-radius: 0.4rem 0.4rem 0 0;
