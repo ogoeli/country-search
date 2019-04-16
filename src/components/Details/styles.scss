@@ -1,6 +1,12 @@
 .details {
   margin-top: 8rem;
 
+  @media screen and (max-width: 37.5rem) {
+    margin-top: 4rem;
+    width: 32rem;
+    margin: 4rem auto 0 auto;
+  }
+
   &__btn {
     width: 13.6rem;
     height: 4rem;
@@ -10,6 +16,26 @@
     box-shadow: 0 0 0.7rem 0 rgba($color: #000000, $alpha: 0.29);
     margin-bottom: 8rem;
     cursor: pointer;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      margin-right: 1rem;
+      font-size: 2rem;
+    }
+
+    @media screen and (max-width: 37.5rem) {
+      margin-bottom: 6.4rem;
+      width: 10.4rem;
+      height: 3.2rem;
+
+      i {
+        margin-right: 0.8rem;
+        font-size: 1.8 rem;
+      }
+    }
   }
 
   &__country {
@@ -17,26 +43,55 @@
     justify-content: space-between;
     align-items: center;
 
+    @media screen and (max-width: 37.5rem) {
+      flex-direction: column;
+      width: 100%;
+      margin: 0 auto;
+      align-items: initial;
+    }
+
     &__img {
       width: 56rem;
       height: 40rem;
+
+      @media screen and (max-width: 37.5rem) {
+        width: 100%;
+        height: 23rem;
+      }
     }
 
     &__info {
       &__title {
         font-size: 3.2rem;
+
+        @media screen and (max-width: 37.5rem) {
+          font-size: 2.2rem;
+          margin-top: 4.4rem;
+        }
       }
 
       &__lists {
         margin-top: 2.4rem;
         display: flex;
 
+        @media screen and (max-width: 37.5rem) {
+          flex-direction: column;
+        }
+
         ul:not(:first-child) {
           margin-left: 14rem;
+
+          @media screen and (max-width: 37.5rem) {
+            margin: 3.2rem 0 0 0;
+          }
         }
 
         ul li {
           font-size: 1.6rem;
+
+          @media screen and (max-width: 37.5rem) {
+            font-size: 1.4rem;
+          }
         }
 
         ul li span {
@@ -52,6 +107,13 @@
         margin-top: 6.8rem;
         display: flex;
         align-items: center;
+        padding-bottom: 6rem;
+
+        @media screen and (max-width: 37.5rem) {
+          flex-direction: column;
+          align-items: flex-start;
+          margin-top: 3.4rem;
+        }
 
         p {
           font-size: 1.6rem;
@@ -64,10 +126,18 @@
           background: #fff;
           border-radius: 0.4rem;
           box-shadow: 0 0 0.4rem 0.1rem rgba($color: #000000, $alpha: 0.1);
+
+          @media screen and (max-width: 37.5rem) {
+            font-size: 1.2rem;
+          }
         }
 
         ul li:first-child {
           margin-left: 1.4rem;
+
+          @media screen and (max-width: 37.5rem) {
+            margin-left: 0;
+          }
         }
 
         ul li:not(:first-child) {

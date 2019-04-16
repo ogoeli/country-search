@@ -31,18 +31,6 @@ const Header = () => {
     return setDark(false);
   };
 
-  // const setTheme = themeColor => {
-  //   if (themeColor === 'light') {
-  //     localStorage.removeItem('theme');
-  //     document.documentElement.removeAttribute('data-theme');
-  //     return setDark(false);
-  //   } else if (themeColor === 'dark') {
-  //     localStorage.setItem('theme', 'dark');
-  //     document.documentElement.setAttribute('data-theme', 'dark');
-  //     return setDark(true);
-  //   }
-  // };
-
   return (
     <header className='header'>
       <div className='header__contents'>

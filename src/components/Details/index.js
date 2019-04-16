@@ -64,8 +64,8 @@ const Details = props => {
     return (
       <div className='details__country'>
         <img
-          src='https://restcountries.eu/data/ala.svg'
-          alt='Country Name'
+          src={countryData.flag}
+          alt={countryData.name}
           className='details__country__img'
         />
 
@@ -113,14 +113,14 @@ const Details = props => {
   return countryData && !error ? (
     <div className='details'>
       <button className='details__btn' onClick={() => props.history.goBack()}>
-        Back
+        <i className='fas fa-long-arrow-alt-left' /> Back
       </button>
       {renderCountry()}
     </div>
   ) : (
     <div className='details'>
       <button className='details__btn' onClick={() => props.history.goBack()}>
-        Back
+        <i className='fas fa-long-arrow-alt-left' /> Back
       </button>
       <h1>No Country Found</h1>
     </div>
