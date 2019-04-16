@@ -10,7 +10,7 @@ const Details = props => {
 
   useEffect(() => {
     getCountryData();
-  }, []);
+  }, [props.history.location]);
 
   const getCountryData = async () => {
     if (localStorage.getItem('countries')) {
@@ -49,7 +49,14 @@ const Details = props => {
     }
 
     const borderCountriesList = borderCountries
-      .map(border => <li key={border}>{border}</li>)
+      .map(border => (
+        <li
+          key={border}
+          onClick={() => props.history.push(`/${border.toLowerCase()}`)}
+        >
+          {border}
+        </li>
+      ))
       .slice(0, 3);
 
     return (
